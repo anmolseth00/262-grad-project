@@ -18,4 +18,6 @@ requests (`pip install requests`)
 
 langchain (`pip install langchain`)
 
+langchain openai (`pip install langchain_openai`)
+
 pymupdf (`pip install pymupdf`)
