@@ -11,6 +11,8 @@ Python 3
 
 A Python Environment (here a conda virtual environment)
 
+streamlit
+
 **REQUIRED:** An OpenAI API private key
 
 * You can find / make an API key here: [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
@@ -21,6 +23,9 @@ A Python Environment (here a conda virtual environment)
 * Active the venv: `source venv/Scripts/activate`
 * Install requirements: `pip install -r requirements.txt`
 
+* Use this command: `streamlit run streamlit.py`
+
 ## References
 * [arXiv API](https://info.arxiv.org/help/api/index.html)
 * [langchain](https://python.langchain.com/docs/integrations/retrievers/arxiv/)
+* [streamlit](https://streamlit.io/)

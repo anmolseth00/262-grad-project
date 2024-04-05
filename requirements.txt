@@ -5,3 +5,4 @@ requests
 langchain
 langchain_openai
 pymupdf
+streamlit
