@@ -1,5 +1,13 @@
 # 262-grad-project
 
+## Files in this Repository:
+demo.py: Python script combining the proof of concept and langchain conversation features into a script that can be run entirely from command line. Allows users to make queries and then either ask questions about the results or receive research suggestions or other insights from the GPT API.
+
+MVP.ipynb: Proof of concept notebook for the arXiv API and using GPT to make queries based on user input
+
+testing.ipynb: Notebook for testing the functionality of langchain for more conversational interactions. Means of answering questions a user may have about results of their query
+
+
 ## Environment and Setup Details:
 Python 3
 
@@ -17,3 +25,4 @@ A Python Environment (here a conda virtual environment)
 
 ## References
 * [arXiv API](https://info.arxiv.org/help/api/index.html)
+* [langchain](https://python.langchain.com/docs/integrations/retrievers/arxiv/)
