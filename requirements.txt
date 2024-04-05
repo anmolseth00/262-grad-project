@@ -1,6 +1,5 @@
 python
 jupyterlab
-arXiv
 openai
 requests
 langchain
