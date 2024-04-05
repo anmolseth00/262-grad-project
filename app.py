@@ -7,10 +7,11 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain_openai import ChatOpenAI
 from langchain_community.retrievers import ArxivRetriever
 
-OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
+# OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
+# OpenAI.api_key = os.getenv("OPENAI_API_KEY")
 
 #for hardcoding
-#OpenAI.api_key = ''
+OpenAI.api_key = ''
 
 client = OpenAI(api_key=OpenAI.api_key)
 
@@ -89,47 +90,14 @@ def summarize(initial_query, papers_info):
     thoughtful_response = response.choices[0].message.content.strip()
     return thoughtful_response
 
-def suggest_research_directions(initial_query, thoughtful_response):
-    """
-    Generates novel research directions based on the user's feedback on a provided summary
-    and their specific interests.
+def initialize_conversational_chain():
+    retriever = ArxivRetriever(load_max_docs=8)
+    model = ChatOpenAI(model_name="gpt-3.5-turbo")
+    qa = ConversationalRetrievalChain.from_llm(model, retriever=retriever)
+    return qa
 
-    Parameters:
-    - initial_query: The original query posed by the user.
-    - thoughtful_response: A comprehensive response to the initial query, summarizing relevant
-      academic papers and insights.
-
-    Returns:
-    - A string containing suggestions for research trends, gaps, next steps, or future directions.
-    """
-
-    print("\n--- Research Direction Suggestion ---")
-    user_feedback = input("What are your thoughts on the provided summary? Any specific areas of interest or questions that arise? ")
-
-    research_interests = input("Could you specify any particular research interests or areas where you're seeking innovation? ")
-    
-    prompt = f"""
-    Based on the initial inquiry about '{initial_query}' and the provided summary, the researcher shared their thoughts: '{user_feedback}'. They expressed a particular interest in '{research_interests}'.
-
-    Considering the current state of research and potential future developments, identify emerging trends, and gaps in the literature, and suggest novel research directions or next steps that could significantly advance the field. Emphasize novelty and innovation in your suggestions.
-    """
-
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {
-                "role": "system",
-                "content": prompt,
-            }
-        ],
-    )
-
-    research_suggestions = response.choices[0].message.content.strip()
-    return research_suggestions
-
-# Super basic setup for proof of concept
 def main():
-    st.title("LangChain-based arXiv Explorer")
+    st.title("arXiv Summarizer")
 
     user_query = st.text_input("Enter your search query:", "")
     if user_query:
@@ -143,6 +111,7 @@ def main():
         thoughtful_response = summarize(user_query, extracted_information)
         st.write("Summary of Findings:")
         st.write(thoughtful_response)
+
 
 if __name__ == "__main__":
     main()

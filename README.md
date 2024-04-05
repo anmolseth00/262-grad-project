@@ -5,7 +5,7 @@
 
 `MVP.ipynb`: Proof of concept notebook for the arXiv API and using GPT to make queries based on user input
 
-`streamlit.py`: 
+`app.py`: Proof of concept for a streamlit-based UI. It only has summarization capabilities at the moment.
 
 ## Environment and Setup Details:
 Python 3
@@ -24,7 +24,7 @@ streamlit
 * Active the virtual environment: `source venv/Scripts/activate`
 * Install requirements: `pip install -r requirements.txt`
 
-* Use this command: `streamlit run streamlit.py`
+* Use this command: `streamlit run app.py`
 
 ## References
 * [arXiv API](https://info.arxiv.org/help/api/index.html)
