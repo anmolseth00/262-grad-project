@@ -5,8 +5,6 @@ demo.py: Python script combining the proof of concept and langchain conversation
 
 MVP.ipynb: Proof of concept notebook for the arXiv API and using GPT to make queries based on user input
 
-testing.ipynb: Notebook for testing the functionality of langchain for more conversational interactions. Means of answering questions a user may have about results of their query
-
 
 ## Environment and Setup Details:
 Python 3
