@@ -1,0 +1,7 @@
+jupyterlab
+arXiv
+openai
+requests
+langchain
+langchain_openai
+pymupdf

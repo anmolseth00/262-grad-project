@@ -11,17 +11,10 @@ You can find / make an API key here: [platform.openai.com/api-keys](https://plat
 
 A few tips on keeping your API key protected can be found [here](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety)
 
-### Packages Needed for Environment
-Jupyter Lab (`pip install jupyterlab`)
+### Usage
+* Create a venv: `python3 -m venv venv`
+* Active the venv: `source venv/Scripts/activate`
+* Install requirements: `pip install -r requirements.txt`
 
-arXiv (`pip install arXiv`)
-
-OpenAI (`pip install openai`)
-
-requests (`pip install requests`)
-
-langchain (`pip install langchain`)
-
-langchain openai (`pip install langchain_openai`)
-
-pymupdf (`pip install pymupdf`)
+## References
+* [arxiv.py](https://github.com/lukasschwab/arxiv.py)
