@@ -133,8 +133,8 @@ def main():
     from langchain_community.retrievers import ArxivRetriever
 
     if OpenAI.api_key == '':
-        print("OpenAI API key is currently empty")
-        OpenAI.api_key = input("Please enter your OpenAI API key: ")
+        print("OpenAI API key is currently empty, please code in your OpenAI API key at the top of demo.py")
+        #OpenAI.api_key = input("Please enter your OpenAI API key: ")
    
 
     os.environ["OPENAI_API_KEY"] = OpenAI.api_key
