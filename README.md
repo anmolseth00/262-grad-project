@@ -3,7 +3,8 @@
 ## Files in this Repository:
 `demo.py`: Python script combining the proof of concept and langchain conversation features into a script that can be run entirely from the command line. Allows users to make queries and then either ask questions about the results or receive research suggestions or other insights from the GPT API.
 
-`MVP.ipynb`: Proof of concept notebook for the arXiv API and using GPT to make queries based on user input
+`MVP.ipynb`: Proof of concept notebook for the arXiv API and using GPT to make queries based on user input. 
+* Note: There was an attempt to incorporate dynamic routing to the most appropriate pre-print server (arXiv, bioRxiv, medRxiv) but after researching and experimenting, we found that only the arXiv API is suitable for our project. bioRxiv and medRxiv's APIs are only suitable for querying papers by publication date. We tested biorxiv-retriever, a python wrapper on top of the bioRxiv API which appears to support text queries. However, in practice, this wrapper API takes multiple minutes for even a basic query. It is not suitable for an application. This 'dynamic routing' code can be found in this notebook to demonstrate our work, but due to these limitations, we have not incorporated them into our demo. 
 
 `app.py`: Proof of concept for a streamlit-based UI. It only has summarization capabilities at the moment.
 
